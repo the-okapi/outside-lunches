@@ -2,15 +2,15 @@ package com.theokapi;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
+//import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
+//import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.RenderTickCounter;
-import net.minecraft.client.world.ClientWorld;
+//import net.minecraft.client.MinecraftClient;
+//import net.minecraft.client.gui.DrawContext;
+//import net.minecraft.client.render.RenderTickCounter;
+//import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.item.ItemStack;
@@ -34,7 +34,7 @@ public class OutsideLunches implements ModInitializer {
 	public static final RegistryKey<DamageType> GOING_INSIDE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(MOD_ID, "going_inside"));
 	public static final TagKey<Block> VALID_ABOVE_PLAYER = TagKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "valid_above_player"));
 
-	void hudLayerRegistrationCallback() {
+	/*void hudLayerRegistrationCallback() {
 		HudLayerRegistrationCallback.EVENT.register(layeredDrawerWrapper -> {
 			IdentifiedLayer layer = new IdentifiedLayer() {
 				@Override
@@ -59,7 +59,7 @@ public class OutsideLunches implements ModInitializer {
 			};
 			layeredDrawerWrapper.addLayer(layer);
 		});
-	}
+	}*/
 
 	void serverTickEvents() {
 		ServerTickEvents.END_WORLD_TICK.register(serverWorld -> {
@@ -100,6 +100,6 @@ public class OutsideLunches implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		serverTickEvents();
-		hudLayerRegistrationCallback();
+		//hudLayerRegistrationCallback();
 	}
 }
